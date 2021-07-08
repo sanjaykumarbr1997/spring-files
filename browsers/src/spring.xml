@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean id ="brow" class = "org.xworkz.browsers.bean.BrowserBean">
+	<property name="id" value="3"></property>
+	<property name="name" value="FireFox"></property>
+	<property name="yearOfRelease" value="2002"></property>
+	<property name="noOfLanguagesAvailable" value="97"></property>
+	<property name="developers" value="Mozilla_Foundation"></property>
+	
+	<!-- <property name="id" value="5"></property>
+	<property name="name" value="Chrome"></property>
+	<property name="yearOfRelease" value="2008"></property>
+	<property name="noOfLanguagesAvailable" value="47"></property>
+	<property name="developers" value="Google"></property> -->
+	
+	
+	
+	</bean>
+
+
+
+
+</beans>
