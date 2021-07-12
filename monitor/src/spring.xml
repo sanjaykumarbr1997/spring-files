@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean id ="monitor" class = "com.xworkz.monitor_details.monitor.bean.MonitorBean">
+	
+	<constructor-arg value="1" type="int"></constructor-arg>
+	<constructor-arg value="LG"></constructor-arg>
+	<constructor-arg value="144"></constructor-arg>
+	<constructor-arg value="Curved"></constructor-arg>
+	<constructor-arg value="22000"></constructor-arg>
+	</bean>
+
+</beans>
