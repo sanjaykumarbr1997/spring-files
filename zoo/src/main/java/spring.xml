@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean id ="zo" class = "com.xworkz.zoo.bean.ZooBean">
+	<property name="id" value="1"></property>
+	<property name="name" value="Banerghatta zoo"></property>
+	<property name="address" value="Karnataka"></property>
+	<property name="noOfAnimals" value="500"></property>
+	</bean>
+	
+	<bean id ="inte" class="java.lang.Integer">
+	<constructor-arg value="77"></constructor-arg>
+	</bean>
+	
+	<bean id = "str" class="java.lang.String">
+	<constructor-arg value="Bhee"></constructor-arg>
+	
+	</bean>
+
+
+</beans>
