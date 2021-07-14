@@ -6,29 +6,17 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean id ="gun" class = "com.xworkz.gun_details.gun.bean.GunBean">
-	<property name="id" value="1"></property>
-	<property name="name" value="AK47"></property>
-	<property name="recoilSpeed" value="7.6"></property>
-	<property name="price" value="250000"></property>
-	<property name="otherGuns" >
-	
-	<list > <value>Uzi</value>
-			<value>Ump</value>
-			<value>Mk4</value>
-	
-	
-	
-	
-	</list>
-	
-	
-	</property>
+	<bean id ="crd" class = "com.xworkz.curd_bacteria.beans.CurdBean">
+	<constructor-arg value="1"></constructor-arg>
+	<constructor-arg value="Nandini"></constructor-arg>
+	<constructor-arg  value = "July"></constructor-arg>
+	<constructor-arg  ref="bc"></constructor-arg>
 	</bean> 	
 	
+	<bean id = "bc" class = "com.xworkz.curd_bacteria.beans.BacteriaBean">
+	<constructor-arg value="3"></constructor-arg>
+	<constructor-arg value="LactoBacillus"></constructor-arg>
 	
-	
-
-	
+	</bean>
 
 </beans>
