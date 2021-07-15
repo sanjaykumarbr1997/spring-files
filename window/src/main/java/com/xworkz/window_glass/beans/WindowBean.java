@@ -5,8 +5,18 @@ import java.io.Serializable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+@Getter
+@Setter
+@ToString
 @Component
 public class WindowBean implements Serializable{
+	
+	
+	
 	@Value(value = "2")
 	private int id;
 	@Value(value = "GreenPly")
@@ -20,42 +30,6 @@ public class WindowBean implements Serializable{
 		System.out.println(this.getClass().getSimpleName()+" created");
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public GlassBean getGlass() {
-		return glass;
-	}
-
-	public void setGlass(GlassBean glass) {
-		this.glass = glass;
-	}
-
-	@Override
-	public String toString() {
-		return "WindowBean [id=" + id + ", name=" + name + ", type=" + type + ", glass=" + glass + "]";
-	}
 	
 	
 	
