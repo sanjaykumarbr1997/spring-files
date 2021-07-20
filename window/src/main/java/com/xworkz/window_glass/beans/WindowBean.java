@@ -1,5 +1,4 @@
 package com.xworkz.window_glass.beans;
-
 import java.io.Serializable;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +28,5 @@ public class WindowBean implements Serializable{
 	public WindowBean() {
 		System.out.println(this.getClass().getSimpleName()+" created");
 	}
-
-	
-	
-	
-	
 
 }
