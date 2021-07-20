@@ -14,4 +14,6 @@ public interface GraphicCardService {
 
 	public void validateAndUpdatePriceByName(String name, float price);
 
+	public void validateAndDeleteDetailsByName(String name);
+
 }

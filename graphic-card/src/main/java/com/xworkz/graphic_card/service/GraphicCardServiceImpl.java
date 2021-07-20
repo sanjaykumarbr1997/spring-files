@@ -47,4 +47,14 @@ public class GraphicCardServiceImpl implements GraphicCardService {
 		
 	}
 
+	@Override
+	public void validateAndDeleteDetailsByName(String name) {
+		if(name!=null) {
+			gDAO.deleteDetailsByName(name);
+		}
+		else {
+			System.out.println("name cant be null");
+		}
+	}
+
 }

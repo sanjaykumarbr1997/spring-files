@@ -21,7 +21,8 @@ import lombok.ToString;
 @NamedQueries(value = {
 		@NamedQuery(name = "getAllDetails", query = "from GraphicCardDTO dto"),
 		@NamedQuery(name = "fetchDetailsByName", query = "from GraphicCardDTO dto where dto.name=:nam"),
-		@NamedQuery(name = "updatePriceByName", query = "update GraphicCardDTO dto set dto.price =:prr where dto.name =:naa")
+		@NamedQuery(name = "updatePriceByName", query = "update GraphicCardDTO dto set dto.price =:prr where dto.name =:naa"),
+		@NamedQuery(name = "deleteDetailsByName", query = "delete from GraphicCardDTO dto where dto.name=:naam")
 		
 
 })

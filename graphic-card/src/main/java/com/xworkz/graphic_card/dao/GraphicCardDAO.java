@@ -13,4 +13,6 @@ public interface GraphicCardDAO {
 	public GraphicCardDTO fetchDetailsByName(String name);
 
 	public void updatePriceByName(String name, float price);
+
+	public void deleteDetailsByName(String name);
 }

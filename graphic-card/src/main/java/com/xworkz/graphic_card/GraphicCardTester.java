@@ -15,12 +15,15 @@ public class GraphicCardTester {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		//BasicConfigurator.configure();
+		
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("resources/spring.xml");
 		System.out.println("Enter:");
 		System.out.println("\"1\" to add new data");
 		System.out.println("\"2\" to fetch all data");
 		System.out.println("\"3\" to get details by name");
 		System.out.println("\"4\" to update price by name");
+		System.out.println("\"5\" to delete deteils by name");
+
 		
 		int number = scanner.nextInt();
 		
@@ -34,6 +37,9 @@ public class GraphicCardTester {
 					System.out.println("Enter version of graphic card");
 					gDTO.setVersion(scanner.next());
 		
+					//GraphicCardService gService = new Grap;
+
+					
 					GraphicCardService gService = applicationContext.getBean(GraphicCardService.class);
 					gService.validateAndCreateGraphicCardDetails(gDTO);
 			
@@ -56,19 +62,13 @@ public class GraphicCardTester {
 				gServicc.validateAndUpdatePriceByName(scanner.next(),scanner.nextFloat());
 				System.out.println("price updated");
 			break;
-
-		
-		
-		
-		
-		
+			
+		case 5:System.out.println("Enter name to delete details");
+		     	GraphicCardService grService = applicationContext.getBean(GraphicCardService.class);
+				grService.validateAndDeleteDetailsByName(scanner.next());
+				System.out.println("details deleted");
+			break;
 		}
-		
-		
-		
-		
-		
-		
 		
 
 	}
