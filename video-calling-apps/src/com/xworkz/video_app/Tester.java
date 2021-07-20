@@ -9,7 +9,6 @@ public class Tester {
 	
 	public static void main(String[] args) {
 		
-		
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
 		VideoAppBean vBean = applicationContext.getBean(VideoAppBean.class);
 		System.out.println(vBean);
