@@ -16,7 +16,7 @@ public class GraphicCardTester {
 		Scanner scanner = new Scanner(System.in);
 		//BasicConfigurator.configure();
 		
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("resources/spring.xml");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
 		System.out.println("Enter:");
 		System.out.println("\"1\" to add new data");
 		System.out.println("\"2\" to fetch all data");

@@ -20,8 +20,6 @@ public class GraphicCardDAOImpl implements GraphicCardDAO{
 	
 	@Autowired
 	private SessionFactory factory;
-	
-	
 	public void createGraphicCard(GraphicCardDTO grDTO) {
 	
 		Session session = null;
