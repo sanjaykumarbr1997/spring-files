@@ -21,7 +21,6 @@ public class CoffeeTester {
 		System.out.println("\"3\" to get details by name");
 		System.out.println("\"4\" to update price by name");
 		System.out.println("\"5\" to delete deteils by name");
-
 		
 		int number = scanner.nextInt();
 		CoffeeDTO cDTO = new CoffeeDTO();
