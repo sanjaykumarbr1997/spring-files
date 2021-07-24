@@ -5,10 +5,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.xworkz.music_instruments.dto.MusicInstrumentsDTO;
 
 @Component
+//n
+//@Repository("MusicInstrumentsDAO")
 public class MusicInstrumentsDAOImpl implements MusicInstrumentsDAO{
 	
 	@Autowired
