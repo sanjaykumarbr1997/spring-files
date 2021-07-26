@@ -34,11 +34,13 @@
 	CreditCardService cServic = applicationContext.getBean(CreditCardService.class);
 	List<CreditCardDTO> lDTOs = cServic.fetchAllDetails();
 	lDTOs.forEach(System.out::println);
+	request.setAttribute("lDTOs", lDTOs);
+	
 	
 	out.println("Thank you for entering details of"+name);
  
  %>
- <%-- <table>
+ <table>
 		<tr>
 			<th>Id</th>
 			<th> Name</th>
@@ -49,14 +51,13 @@
 		</tr>
 		<caption style="font-size: 30px;">List Of Vaccinated details</caption>
 
-		<c:forEach var="lDTOs" items="lDTOs">
+		<c:forEach var="lDTOs" items="${lDTOs}">
 
 			<tr>
-				
-				<td>lDTOs.getId() </td>
-				<td>lDTOs.getName() </td>
-				<td>lDTOs.getExpiryYear() </td>
-				<td>lDTOs.getColor </td>
+				<td>${lDTOs.getId()} </td>
+				<td>${lDTOs.getName()} </td>
+				<td>${lDTOs.getExpiryYear()} </td>
+				<td>${lDTOs.getColor()} </td>
 				
 				<br>
 				
@@ -66,7 +67,7 @@
 
 
 		</c:forEach>
-	</table> --%>
+	</table>
 
 </body>
 </html>
