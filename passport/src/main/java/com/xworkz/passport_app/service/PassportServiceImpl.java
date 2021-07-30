@@ -22,15 +22,7 @@ public class PassportServiceImpl implements PassportService{
 		
 	}
 
-	public Boolean validateAndVerifyDetails(String loginId, String password) {
-		if(!loginId.isEmpty()&&!password.isEmpty()) {
-			return pDAO.verifyDetails(loginId,password);
-		}
-		else {
-			System.out.println("Name or password cant be empty");
-		}
-		return null;
-	}
+	
 	
 
 }

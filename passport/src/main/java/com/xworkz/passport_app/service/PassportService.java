@@ -6,6 +6,5 @@ public interface PassportService {
 
 	public void validateAndSave(PassportDTO pDTO);
 
-	public Boolean validateAndVerifyDetails(String loginId, String password);
-
+	
 }

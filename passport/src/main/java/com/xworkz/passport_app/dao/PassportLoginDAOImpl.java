@@ -11,32 +11,32 @@ import com.xworkz.passport_app.dto.PassportDTO;
 import com.xworkz.passport_app.dto.PassportLoginDTO;
 
 @Repository
-public class PassportDAOImpl implements PassportDAO{
+public class PassportLoginDAOImpl implements PassportLoginDAO{
 
 	@Autowired
 	private SessionFactory factory;
-	public void save(PassportDTO pDTO) {
+	
+	
+	public PassportDTO verify(String loginId, String password) {
 		Session session = null;
+		PassportDTO pDTO=null;
 		try {
-
-			session = factory.openSession();
-			session.beginTransaction();
-			session.save(pDTO);
-			session.getTransaction().commit();
+				session = factory.openSession();
+				Query qry = session.getNamedQuery("verifyDetails");
+				qry.setParameter("lid", loginId);
+				qry.setParameter("cpas", password);
+				
+				
+				 pDTO= (PassportDTO) qry.uniqueResult();
+				 return pDTO;
 		}catch (HibernateException e) {
 			e.printStackTrace();
-			if(session.getTransaction()!=null) {
-				session.getTransaction().rollback();
-			}
-			
 		}finally {
 			if(session!=null) {
 				session.close();
 			}
 		}
-		
+		return null;
 	}
-	
-	
 
 }
