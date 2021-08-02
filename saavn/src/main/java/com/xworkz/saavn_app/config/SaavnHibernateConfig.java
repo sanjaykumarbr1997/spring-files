@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 //@EnableTransactionManagement
 @ComponentScan({ "com.xworkz.saavn_app.config" })
-@PropertySource(value = { "application.properties" })
+@PropertySource(value = { "classpath:application.properties" })
 public class SaavnHibernateConfig {
 	
 	@Autowired
