@@ -1,5 +1,7 @@
 package com.xworkz.saavn_app.dao;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,31 +12,17 @@ import org.springframework.stereotype.Repository;
 import com.xworkz.saavn_app.dto.SaavnRegistrationDTO;
 
 @Repository
+@Transactional
 public class SaavnLoginDAOImpl implements SaavnLoginDAO {
 
 	@Autowired
 	private SessionFactory factory;
 	SaavnRegistrationDTO dto= null;
 	public SaavnRegistrationDTO fetchDetails(String loginId, String password) {
-		Session session = null;
-		
-		try {
-			session = factory.openSession();
-			Query qry = session.getNamedQuery("fetchDetails");
-			qry.setParameter("lid", loginId);
-			qry.setParameter("pass", password);
-			
-			dto =(SaavnRegistrationDTO) qry.uniqueResult();
+	
+			dto=(SaavnRegistrationDTO) factory.getCurrentSession().getNamedQuery("fetchDetails").setParameter("lid",loginId ).setParameter("pass", password).uniqueResult();
 			return dto;
-		}
-		catch (HibernateException e) {
-			e.printStackTrace();
-		}finally {
-			if(session!=null) {
-				session.close();
-			}
-		}
-		return null;
+
 	}
 
 }

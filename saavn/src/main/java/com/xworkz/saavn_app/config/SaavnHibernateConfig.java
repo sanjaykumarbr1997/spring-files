@@ -17,7 +17,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-//@EnableTransactionManagement
+@EnableTransactionManagement
 @ComponentScan({ "com.xworkz.saavn_app.config" })
 @PropertySource(value = { "classpath:application.properties" })
 public class SaavnHibernateConfig {
@@ -69,7 +69,7 @@ public class SaavnHibernateConfig {
 	
 	
 	
-	/*@Bean
+	@Bean
 	@Autowired
 	public HibernateTransactionManager transactionManager(
 			SessionFactory s)
@@ -77,7 +77,7 @@ public class SaavnHibernateConfig {
 		HibernateTransactionManager txManager = new HibernateTransactionManager();
 		txManager.setSessionFactory(s);
 		return txManager;
-	}*/
+	}
 
 
 }
