@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.protobuf.ServiceException;
 import com.xworkz.passport_app.dto.PassportDTO;
+import com.xworkz.passport_app.exception.ControllerException;
 import com.xworkz.passport_app.service.PassportService;
 
 @Controller
@@ -20,13 +22,19 @@ public class PassportRegistrationController{
 	}
 
 	@PostMapping("/registration.all")
-	public ModelAndView createDetails(@ModelAttribute PassportDTO pDTO) {
-		if(!pDTO.getGivenName().isEmpty()&& pDTO!=null) {
+	public ModelAndView createDetails(@ModelAttribute PassportDTO pDTO) throws ServiceException, ControllerException {
+		if(!pDTO.getGivenName().isEmpty()) {
+			try {
 			pService.validateAndSave(pDTO);
+			
 			return new ModelAndView("PassportUserLogin", "msgg","Account created ..Please Login to continue");
+			}catch (ServiceException e) {
+				e.printStackTrace();
+				throw new ControllerException(e.getMessage());
+			}
 		}
 		else {
-			return new ModelAndView("PassportUserRegistration", "msg","Sorry Registration failed..Please try again");
+			return new ModelAndView("PassportUserRegistration", "msg","Sorry Registration failed..Invalid Name..Please try again");
 
 			
 		}

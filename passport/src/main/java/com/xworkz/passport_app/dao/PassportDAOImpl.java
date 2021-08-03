@@ -9,13 +9,14 @@ import org.springframework.stereotype.Repository;
 
 import com.xworkz.passport_app.dto.PassportDTO;
 import com.xworkz.passport_app.dto.PassportLoginDTO;
+import com.xworkz.passport_app.exception.DAOException;
 
 @Repository
-public class PassportDAOImpl implements PassportDAO{
+public class PassportDAOImpl implements PassportDAO {
 
 	@Autowired
 	private SessionFactory factory;
-	public void save(PassportDTO pDTO) {
+	public void save(PassportDTO pDTO) throws DAOException {
 		Session session = null;
 		try {
 
@@ -27,6 +28,7 @@ public class PassportDAOImpl implements PassportDAO{
 			e.printStackTrace();
 			if(session.getTransaction()!=null) {
 				session.getTransaction().rollback();
+				throw new DAOException("Exception saving in DAO" + e.getMessage());
 			}
 			
 		}finally {
