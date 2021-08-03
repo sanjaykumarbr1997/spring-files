@@ -20,6 +20,7 @@ public class SaavnLoginDAOImpl implements SaavnLoginDAO {
 	SaavnRegistrationDTO dto= null;
 	public SaavnRegistrationDTO fetchDetails(String loginId, String password) {
 	
+		
 			dto=(SaavnRegistrationDTO) factory.getCurrentSession().getNamedQuery("fetchDetails").setParameter("lid",loginId ).setParameter("pass", password).uniqueResult();
 			return dto;
 
